@@ -1,5 +1,53 @@
 <html>
 <head>
+  <html>
+    <script>
+    window.addEventListener("DOMContentLoaded", function(){
+      var areaSelect=document.getElementById("area");
+      var prefSelect=document.getElementById("pref");
+        
+      var prefList=[
+        ["北海道","青森","岩手","宮城","秋田","山形","福島"],
+        ["東京","茨城","栃木","群馬","埼玉","千葉","神奈川"],
+        ["新潟","富山","石川","福井","山梨","長野","岐阜","静岡","愛知"],
+        ["京都","大阪","三重","滋賀","兵庫","奈良","和歌山"],
+        ["鳥取","島根","岡山","広島","山口"],
+        ["徳島","香川","愛媛","高知"],
+        ["福島","佐賀","長崎","大分","熊本","宮崎","鹿児島","沖縄"]
+       ];
+     
+      
+      areaSelect.addEventListener("change",function(event){
+        prefSelect.innerHTML="";
+        if(this.value=="")return;
+        var list=prefList[this.value];
+        for(var i=0; i<list.length; i++){
+          var option = document.createElement('option');
+          option.value=i;
+          option.text=list[i];
+          prefSelect.appendChild(option);
+        }
+       }
+    );
+  });
+  </script>
+ 
+        
+<body>
+  <select id = "area">
+     <option value="">選択してください</option>
+     <option value="0">北海道・東北地方</option>
+     <option value="1">関東地方</option>
+     <option value="2">中部地方</option>
+     <option value="3">近畿地方</option>
+     <option value="4">中国地方</option>
+     <option value="5">四国地方</option>
+     <option value="6">九州・沖縄地方</option>
+    </select>
+  <select id ="pref">
+      <option value="">地方を選択してください</option>
+  </select>
+ </body>
   <title>服装診断</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="index.css">
