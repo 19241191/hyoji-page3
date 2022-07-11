@@ -1,6 +1,7 @@
 body {
-  margin: 0;
-  padding: 0;
+  text-align: center;
+  margin: auto;
+  padding: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
 }
 
